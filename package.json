@@ -9,15 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PrimeAcademy/weekend-sql-to-do-list.git"
+    "url": "git+https://github.com/PatrickZ89/weekend-sql-to-do-list.git"
+    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PrimeAcademy/weekend-sql-to-do-list/issues"
+    "url": "https://github.com/PatrickZ89/weekend-sql-to-do-list/issues"
   },
-  "homepage": "https://github.com/PrimeAcademy/weekend-sql-to-do-list#readme",
+  "homepage": "https://github.com/PatrickZ89/weekend-sql-to-do-list#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
