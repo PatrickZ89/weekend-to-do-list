@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/jQuery.js" charset="utf-8"></script>
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA"
+    crossorigin="anonymous">
+    <linkt rel="stylesheet" href="views/styles.css">
+        <title>To Do List</title>
+</head>
+
+<body>
+    <header>
+        <h1>To Do List</h1>
+    </header>
+    <section id="addTask"></section>
+    <h3>Add Task</h3>
+    <input type="text" id="taskIn" value="" placeholder="Task">
+    <select id="statusDrop">
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Complete">Complete</option>
+    </select>
+    <select id="priorityDrop">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+    </select>
+    <input type="text" id="notesIn" value="" placeholder="Notes"> 
+    <select id="deadline">
+      <option value="">Deadline</option>
+    </select>
+    <button type="button" id="addButton">Add Task</button>
+    </section>
+    <section>
+      <table class="table table-bordered table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Priority</th>
+            <th>Notes</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody id="taskList">
+        </tbody>
+      </table>
+    </section>
+</body>
+
+</html>
