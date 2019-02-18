@@ -18,9 +18,8 @@ pool.on('error',(error) => {
 
 router.get('/', (req, res) => {
     console.log('GET route was hit');
-    pool.query('SELECT * FROM "tasks"')
+    pool.query('SELECT * FROM "tasks" ORDER BY "status" DESC, "id"')
         .then((results) => {
-            console.log(results.rows)
             res.send(results.rows);
         }).catch((error) => {
             console.log('error with GET', error);
@@ -29,7 +28,43 @@ router.get('/', (req, res) => {
 });
 
 
+router.post('/', (req, res) => {
+    console.log('Adding Task:', req.body.task);
+    pool.query(`INSERT INTO "tasks" ("task", "status", "priority", "notes", "deadline")
+    VALUES ( $1, $2, $3, $4, $5 );`, [req.body.task, req.body.status, req.body.priority, req.body.notes, req.body.deadline])
+    .then(() => {
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error with task insert:', error);
+        res.sendStatus(500);
+    });
+});
 
+
+router.delete('/:id', (req, res) => {
+    console.log('/tasks DELETE request was hit');
+    console.log('req.params:', req.params);
+    pool.query(`DELETE FROM "tasks" WHERE "id"=$1;`, [req.params.id])
+    .then(() => {
+        res.sendStatus(204);
+    }).catch(error => {
+        console.log('there was an error on the task DELETE query', error);
+        res.sendStatus(500);
+    });
+});
+
+
+router.put('/:id', (req, res) => {
+    console.log('/tasks PUT request was hit');
+    console.log('req.params', req.params);
+    pool.query(`UPDATE "tasks"  SET "status"= 'Complete' WHERE "id"=$1`, [req.params.id])
+    .then(() => {
+        res.sendStatus(204);
+    }).catch((error) => {
+        console.log('there was an error on the task PUT query', error);
+        res.sendStatus(500);
+    });
+});
 
 
 

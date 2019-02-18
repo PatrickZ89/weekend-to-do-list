@@ -14,26 +14,26 @@
 </head>
 
 <body>
+    <div class="jumbotron text-center">
     <header>
         <h1>To Do List</h1>
     </header>
+    </div>
     <section id="addTask"></section>
     <h3>Add Task</h3>
     <input type="text" id="taskIn" value="" placeholder="Task">
-    <select id="statusDrop">
+    <select id="statusIn">
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
             <option value="Complete">Complete</option>
     </select>
-    <select id="priorityDrop">
+    <select id="priorityIn">
             <option value="High">High</option>
             <option value="Medium">Medium</option>
             <option value="Low">Low</option>
     </select>
     <input type="text" id="notesIn" value="" placeholder="Notes"> 
-    <select id="deadline">
-      <option value="">Deadline</option>
-    </select>
+    <input type="date" id="deadlineIn">Deadline</input>
     <button type="button" id="addButton">Add Task</button>
     </section>
     <section>
