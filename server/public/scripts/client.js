@@ -45,6 +45,8 @@ function getTasks() {
         
         response.forEach(function (task) {
             console.log('status:', task.status);
+
+            
             
             if (task.status === 'Complete') {
                 $('#taskList').append(`
@@ -53,7 +55,9 @@ function getTasks() {
             <td>${task.status}</td>
             <td>${task.priority}</td>
             <td>${task.notes}</td>
-            <td>${task.deadline}</td>
+            <td>${new Date(task.deadline).getMonth() + 1} / 
+            ${new Date(task.deadline).getDate()} / 
+            ${new Date(task.deadline).getFullYear()} </td>
             <td><button class="deleteButton" data-id="${task.id}">Delete</button>
             </tr>
             `)
@@ -65,7 +69,9 @@ function getTasks() {
             <td>${task.status}</td>
             <td>${task.priority}</td>
             <td>${task.notes}</td>
-            <td>${task.deadline}</td>
+            <td>${new Date(task.deadline).getMonth() + 1} / 
+            ${new Date(task.deadline).getDate()} / 
+            ${new Date(task.deadline).getFullYear()} </td>
             <td><button class="completeButton" data-id="${task.id}">Completed</button>
             <td><button class="deleteButton" data-id="${task.id}">Delete</button>
             </tr>
